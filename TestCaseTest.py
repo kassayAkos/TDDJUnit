@@ -14,7 +14,13 @@ class TestCaseTest(TestCase):
         test = WasRun("testBrokenMethod")
         result = test.run()
         assert("1 run, 1 faild" == result.summary())
+    def tastFailedResultFormatting(self):
+        result = TestResukt()
+        result.testStarted()
+        result.testFailed()
+        assert("1 run, 1 faild" == result.summary())
 
 TestCaseTest("testTemplateMethod").run()
 TestCaseTest("testResult").run()
 TestCaseTest("testFailedResult").run()
+TestCaseTest("tastFailedResultFormatting").run()
